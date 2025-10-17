@@ -24,13 +24,12 @@ const FormField = <T extends FieldValues>({
       <FormItem>
         <FormLabel>{label}</FormLabel>
         <FormControl>
-          <input {...field} placeholder={placeholder} type={type} />
+          <input {...field} placeholder={placeholder} type={type} className='input' />
         </FormControl>
-        <FormDescription>This is your {label.toLowerCase()}.</FormDescription>
         <FormMessage />
       </FormItem>
     )}
   />
 )
 
-export default FormField
+export default FormField;
