@@ -17,7 +17,7 @@ import {
 import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 
- import { signIn, signUp } from "@/lib/actions/auth.action";
+import { signIn, signUp } from "@/lib/actions/auth.action";
 import FormField from "./FormField";
 
 type FormType = "sign-in" | "sign-up";
@@ -46,7 +46,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     try {
       if (type === "sign-up") {
-         const { name, email, password } = data;
+          const { name, email, password } = data;
 
         const userCredential = await createUserWithEmailAndPassword(
           auth,

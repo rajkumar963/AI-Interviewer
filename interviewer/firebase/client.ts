@@ -1,6 +1,6 @@
-// Import the functions you need from the SDKs you need
+// Import the functions you need from the client SDKs
 import { initializeApp, getApp, getApps } from "firebase/app";
-import { getAuth } from "firebase-admin/auth";
+import { getAuth } from "firebase/auth";          // ✅ use firebase/auth (NOT firebase-admin/auth)
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -13,8 +13,9 @@ const firebaseConfig = {
   measurementId: "G-RD8E62E45Z"
 };
 
-// Initialize Firebase
+// Initialize Firebase app (avoid re-initializing)
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
+// Export client SDKs
 export const auth = getAuth(app);
 export const db = getFirestore(app);
